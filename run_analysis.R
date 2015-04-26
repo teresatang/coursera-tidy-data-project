@@ -17,7 +17,7 @@
 ##i) Implementation of this script is based on the interpretation of the requirements clarified in this post: 
 ##"https://class.coursera.org/getdata-013/forum/thread?thread_id=30"
 ##ii) the "run_analysis.R" script is stored in the current R working directory.
-##iii) the zip pakcage data has been downloaded from the source to your local computer which has been unzipped.
+##iii) the zip package data has been downloaded from the source to your local computer which has been unzipped.
 ##iv) the unzipped folder is called "UCI HAR Dataset" and is stored in the root of the current R working directory.
 
 
@@ -43,7 +43,7 @@ if (!require("reshape2")) {
 activityTypes <- read.table("./UCI HAR Dataset/activity_labels.txt", header=FALSE, blank.lines.skip=TRUE)
 features <- read.table('./UCI HAR Dataset/features.txt', header=FALSE, blank.lines.skip=TRUE)
 
-## Load train data files, select the required columns, label  the columns and merge them 
+## Load train data files, label the columns and merge them 
 subjectTrain <- read.table('./UCI HAR Dataset/train/subject_train.txt', header=FALSE, blank.lines.skip=TRUE)
 xTrain <- read.table('./UCI HAR Dataset/train/x_train.txt', header=FALSE, blank.lines.skip=TRUE)
 yTrain <- read.table('./UCI HAR Dataset/train/y_train.txt', header=FALSE, blank.lines.skip=TRUE)
@@ -57,8 +57,7 @@ colnames(yTrain) <- "activityId"
 # combine train data
 trainData = cbind(subjectTrain,yTrain,xTrain)
 
-
-## Load test data files, select the required columns, label  the columns and merge them 
+## Load test data files, label the columns and merge them 
 subjectTest <- read.table('./UCI HAR Dataset/test/subject_test.txt', header=FALSE, blank.lines.skip=TRUE)
 xTest <- read.table('./UCI HAR Dataset/test/x_test.txt', header=FALSE, blank.lines.skip=TRUE)
 yTest <- read.table('./UCI HAR Dataset/test/y_test.txt', header=FALSE, blank.lines.skip=TRUE)
